@@ -2,7 +2,7 @@
 import { useState, memo } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 
-function SearchForm({ onSearch }) {
+function SearchForm({ onSearch, searchType }) {
   const [searchQuery, setSearchQuery] = useState("");
   const handleChange = (e) => {
     setSearchQuery(e.target.value);
@@ -20,7 +20,11 @@ function SearchForm({ onSearch }) {
           text-gray-700 italic placeholder-gray-400 outline-none transition duration-150 ease-in-out 
           focus:z-[3] focus:shadow-[inset_0_0_4px_2px_rgba(37,99,235,0.6)] focus:border-blue-600
           focus:outline-none antialiased"
-        placeholder="Explore Anime and Characters"
+        placeholder={
+          searchType
+            ? `Search for ${searchType}`
+            : "Explore Anime and Characters"
+        }
         value={searchQuery}
         onChange={handleChange}
         id="search"
@@ -41,5 +45,9 @@ function SearchForm({ onSearch }) {
     </form>
   );
 }
+
+SearchForm.defaultProps = {
+  searchType: null,
+};
 
 export default memo(SearchForm);

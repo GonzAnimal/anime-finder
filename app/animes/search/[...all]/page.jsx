@@ -74,7 +74,7 @@ function AllResultsPage({ params }) {
             className="relative flex w-full max-w-[80%] md:max-w-[70%] 
           lg:max-w-[60%] mx-auto flex-wrap items-stretch"
           >
-            <SearchForm onSearch={handleSearch} />
+            <SearchForm onSearch={handleSearch} searchType={searchType} />
           </div>
         </div>
         <article className="md:max-w-screen-xl min-h-[calc(100svh-24.5rem)] mx-auto pb-16">
