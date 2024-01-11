@@ -5,7 +5,6 @@ import { useMemo } from "react";
 import CharacterMedal from "@/components/CharacterMedal";
 import { RenderHTMLStr } from "@/utils/utils";
 import Loader from "@/components/Loader";
-import Image from "next/image";
 
 function AnimeDetails({ params }) {
   const animeId = params.id;
